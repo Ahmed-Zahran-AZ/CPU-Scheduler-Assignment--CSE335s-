@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CPU Scheduler Simulator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f0f0f0;
+}
+QLabel {
+    color: #2c3e50;
+    font-weight: bold;
+}
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #2980b9;
+}
+QPushButton:disabled {
+    background-color: #bdc3c7;
+}
+QTableWidget {
+    background-color: white;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+QTableWidget::item {
+    padding: 4px;
+}
+QTableWidget::item:selected {
+    background-color: #3498db;
+    color: white;
+}
+QHeaderView::section {
+    background-color: #34495e;
+    color: white;
+    padding: 6px;
+    border: none;
+}
+QLineEdit {
+    padding: 6px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    background-color: white;
+}
+QComboBox {
+    padding: 6px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    background-color: white;
+}
+QGroupBox {
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    margin-top: 1em;
+    padding-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="inputGroup">
+      <property name="title">
+       <string>Process Input</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Scheduler Type:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="CbuSchedulers">
+         <item>
+          <property name="text">
+           <string>Priority Non-Preemptive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Priority Preemptive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SJF Non-Preemptive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>SJF Preemptive</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>FCFS</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Round Robin</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Burst Time:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="BurstTIme"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Arrival Time:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Arrival"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="PriorityLabel">
+         <property name="text">
+          <string>Priority:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Priority"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Add Process</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>Add Random Process</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Run Scheduler</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="text">
+          <string>Run Scheduler (No Live Scheduling)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Abort</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="currentProcessesGroup">
+        <property name="title">
+         <string>Current Processes</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QTableWidget" name="CurrentProcesses">
+           <column>
+            <property name="text">
+             <string>Burst Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Arrival Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Priority</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="executionGroup">
+        <property name="title">
+         <string>In Execution</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QTableWidget" name="inExcution">
+           <column>
+            <property name="text">
+             <string>Remaining Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Turnaround Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Priority</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="finishedGroup">
+        <property name="title">
+         <string>Finished Processes</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QTableWidget" name="FinishedProcesses">
+           <column>
+            <property name="text">
+             <string>Waiting Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Turnaround Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Burst Time</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Arrival Time</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QGroupBox" name="ganttGroup">
+        <property name="title">
+         <string>Gantt Chart</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QGraphicsView" name="GanttChart">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="AverageTimes">
+           <property name="styleSheet">
+            <string notr="true">font-size: 12pt;
+padding: 10px;
+background-color: #ecf0f1;
+border-radius: 4px;</string>
+           </property>
+           <property name="text">
+            <string>Average Waiting Time: 0
+Average Turnaround Time: 0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.16
+** Created by: Qt User Interface Compiler version 6.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -70,7 +70,7 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+            MainWindow->setObjectName("MainWindow");
         MainWindow->resize(1200, 800);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
 "    background-color: #f0f0f0;\n"
@@ -138,15 +138,15 @@ public:
 "    padding: 0 3px 0 3px;\n"
 "}"));
         centralwidget = new QWidget(MainWindow);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setObjectName("centralwidget");
         horizontalLayout = new QHBoxLayout(centralwidget);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName("horizontalLayout");
         inputGroup = new QGroupBox(centralwidget);
-        inputGroup->setObjectName(QString::fromUtf8("inputGroup"));
+        inputGroup->setObjectName("inputGroup");
         verticalLayout = new QVBoxLayout(inputGroup);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(inputGroup);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName("label");
 
         verticalLayout->addWidget(label);
 
@@ -157,71 +157,71 @@ public:
         CbuSchedulers->addItem(QString());
         CbuSchedulers->addItem(QString());
         CbuSchedulers->addItem(QString());
-        CbuSchedulers->setObjectName(QString::fromUtf8("CbuSchedulers"));
+        CbuSchedulers->setObjectName("CbuSchedulers");
 
         verticalLayout->addWidget(CbuSchedulers);
 
         label_2 = new QLabel(inputGroup);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName("label_2");
 
         verticalLayout->addWidget(label_2);
 
         BurstTIme = new QLineEdit(inputGroup);
-        BurstTIme->setObjectName(QString::fromUtf8("BurstTIme"));
+        BurstTIme->setObjectName("BurstTIme");
 
         verticalLayout->addWidget(BurstTIme);
 
         label_3 = new QLabel(inputGroup);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName("label_3");
 
         verticalLayout->addWidget(label_3);
 
         Arrival = new QLineEdit(inputGroup);
-        Arrival->setObjectName(QString::fromUtf8("Arrival"));
+        Arrival->setObjectName("Arrival");
 
         verticalLayout->addWidget(Arrival);
 
         PriorityLabel = new QLabel(inputGroup);
-        PriorityLabel->setObjectName(QString::fromUtf8("PriorityLabel"));
+        PriorityLabel->setObjectName("PriorityLabel");
 
         verticalLayout->addWidget(PriorityLabel);
 
         Priority = new QLineEdit(inputGroup);
-        Priority->setObjectName(QString::fromUtf8("Priority"));
+        Priority->setObjectName("Priority");
 
         verticalLayout->addWidget(Priority);
 
         pushButton = new QPushButton(inputGroup);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setObjectName("pushButton");
 
         verticalLayout->addWidget(pushButton);
 
         pushButton_2 = new QPushButton(inputGroup);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setObjectName("pushButton_2");
 
         verticalLayout->addWidget(pushButton_2);
 
         pushButton_3 = new QPushButton(inputGroup);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setObjectName("pushButton_3");
 
         verticalLayout->addWidget(pushButton_3);
 
         pushButton_6 = new QPushButton(inputGroup);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setObjectName("pushButton_6");
 
         verticalLayout->addWidget(pushButton_6);
 
         pushButton_4 = new QPushButton(inputGroup);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setObjectName("pushButton_4");
 
         verticalLayout->addWidget(pushButton_4);
 
         pushButton_5 = new QPushButton(inputGroup);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setObjectName("pushButton_5");
 
         verticalLayout->addWidget(pushButton_5);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -229,11 +229,11 @@ public:
         horizontalLayout->addWidget(inputGroup);
 
         verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setObjectName("verticalLayout_2");
         currentProcessesGroup = new QGroupBox(centralwidget);
-        currentProcessesGroup->setObjectName(QString::fromUtf8("currentProcessesGroup"));
+        currentProcessesGroup->setObjectName("currentProcessesGroup");
         verticalLayout_3 = new QVBoxLayout(currentProcessesGroup);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setObjectName("verticalLayout_3");
         CurrentProcesses = new QTableWidget(currentProcessesGroup);
         if (CurrentProcesses->columnCount() < 3)
             CurrentProcesses->setColumnCount(3);
@@ -243,7 +243,7 @@ public:
         CurrentProcesses->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         CurrentProcesses->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        CurrentProcesses->setObjectName(QString::fromUtf8("CurrentProcesses"));
+        CurrentProcesses->setObjectName("CurrentProcesses");
 
         verticalLayout_3->addWidget(CurrentProcesses);
 
@@ -251,9 +251,9 @@ public:
         verticalLayout_2->addWidget(currentProcessesGroup);
 
         executionGroup = new QGroupBox(centralwidget);
-        executionGroup->setObjectName(QString::fromUtf8("executionGroup"));
+        executionGroup->setObjectName("executionGroup");
         verticalLayout_4 = new QVBoxLayout(executionGroup);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setObjectName("verticalLayout_4");
         inExcution = new QTableWidget(executionGroup);
         if (inExcution->columnCount() < 3)
             inExcution->setColumnCount(3);
@@ -263,7 +263,7 @@ public:
         inExcution->setHorizontalHeaderItem(1, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         inExcution->setHorizontalHeaderItem(2, __qtablewidgetitem5);
-        inExcution->setObjectName(QString::fromUtf8("inExcution"));
+        inExcution->setObjectName("inExcution");
 
         verticalLayout_4->addWidget(inExcution);
 
@@ -271,9 +271,9 @@ public:
         verticalLayout_2->addWidget(executionGroup);
 
         finishedGroup = new QGroupBox(centralwidget);
-        finishedGroup->setObjectName(QString::fromUtf8("finishedGroup"));
+        finishedGroup->setObjectName("finishedGroup");
         verticalLayout_5 = new QVBoxLayout(finishedGroup);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setObjectName("verticalLayout_5");
         FinishedProcesses = new QTableWidget(finishedGroup);
         if (FinishedProcesses->columnCount() < 4)
             FinishedProcesses->setColumnCount(4);
@@ -285,7 +285,7 @@ public:
         FinishedProcesses->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
         FinishedProcesses->setHorizontalHeaderItem(3, __qtablewidgetitem9);
-        FinishedProcesses->setObjectName(QString::fromUtf8("FinishedProcesses"));
+        FinishedProcesses->setObjectName("FinishedProcesses");
 
         verticalLayout_5->addWidget(FinishedProcesses);
 
@@ -296,14 +296,14 @@ public:
         horizontalLayout->addLayout(verticalLayout_2);
 
         verticalLayout_6 = new QVBoxLayout();
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setObjectName("verticalLayout_6");
         ganttGroup = new QGroupBox(centralwidget);
-        ganttGroup->setObjectName(QString::fromUtf8("ganttGroup"));
+        ganttGroup->setObjectName("ganttGroup");
         verticalLayout_7 = new QVBoxLayout(ganttGroup);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        verticalLayout_7->setObjectName("verticalLayout_7");
         GanttChart = new QGraphicsView(ganttGroup);
-        GanttChart->setObjectName(QString::fromUtf8("GanttChart"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        GanttChart->setObjectName("GanttChart");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(1);
         sizePolicy.setHeightForWidth(GanttChart->sizePolicy().hasHeightForWidth());
@@ -312,7 +312,7 @@ public:
         verticalLayout_7->addWidget(GanttChart);
 
         AverageTimes = new QLabel(ganttGroup);
-        AverageTimes->setObjectName(QString::fromUtf8("AverageTimes"));
+        AverageTimes->setObjectName("AverageTimes");
         AverageTimes->setStyleSheet(QString::fromUtf8("font-size: 12pt;\n"
 "padding: 10px;\n"
 "background-color: #ecf0f1;\n"
@@ -329,7 +329,7 @@ public:
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);

@@ -90,6 +90,9 @@ Makefile: cpu_sceduler.pro C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.c
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_core_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_dbus.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_dbus_private.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designer.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designer_private.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_edid_support_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
@@ -97,6 +100,8 @@ Makefile: cpu_sceduler.pro C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.c
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_gui.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_gui_private.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_help.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_help_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_network.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_network_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_opengl.pri \
@@ -111,6 +116,9 @@ Makefile: cpu_sceduler.pro C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.c
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uiplugin.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uitools.pri \
+		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uitools_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
@@ -121,7 +129,6 @@ Makefile: cpu_sceduler.pro C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.c
 		C:/msys64/mingw64/share/qt5/mkspecs/features/qt_config.prf \
 		C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.conf \
 		C:/msys64/mingw64/share/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		C:/msys64/mingw64/share/qt5/mkspecs/features/exclusive_builds.prf \
 		C:/msys64/mingw64/share/qt5/mkspecs/features/toolchain.prf \
 		C:/msys64/mingw64/share/qt5/mkspecs/features/default_pre.prf \
@@ -146,6 +153,7 @@ Makefile: cpu_sceduler.pro C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.c
 		C:/msys64/mingw64/share/qt5/mkspecs/features/lex.prf \
 		cpu_sceduler.pro \
 		C:/msys64/mingw64/lib/qtmain.prl \
+		.qmake.stash \
 		C:/msys64/mingw64/share/qt5/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile cpu_sceduler.pro
 C:/msys64/mingw64/share/qt5/mkspecs/features/spec_pre.prf:
@@ -168,6 +176,9 @@ C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_core.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_core_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_dbus.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_dbus_private.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designer.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designer_private.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_edid_support_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
@@ -175,6 +186,8 @@ C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_fb_support_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_gui.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_gui_private.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_help.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_help_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_network.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_network_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_opengl.pri:
@@ -189,6 +202,9 @@ C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_sql_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_testlib.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_testlib_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_theme_support_private.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uiplugin.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uitools.pri:
+C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_uitools_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_widgets.pri:
 C:/msys64/mingw64/share/qt5/mkspecs/modules/qt_lib_widgets_private.pri:
@@ -199,7 +215,6 @@ C:/msys64/mingw64/share/qt5/mkspecs/features/qt_functions.prf:
 C:/msys64/mingw64/share/qt5/mkspecs/features/qt_config.prf:
 C:/msys64/mingw64/share/qt5/mkspecs/win32-g++/qmake.conf:
 C:/msys64/mingw64/share/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
 C:/msys64/mingw64/share/qt5/mkspecs/features/exclusive_builds.prf:
 C:/msys64/mingw64/share/qt5/mkspecs/features/toolchain.prf:
 C:/msys64/mingw64/share/qt5/mkspecs/features/default_pre.prf:
@@ -224,6 +239,7 @@ C:/msys64/mingw64/share/qt5/mkspecs/features/yacc.prf:
 C:/msys64/mingw64/share/qt5/mkspecs/features/lex.prf:
 cpu_sceduler.pro:
 C:/msys64/mingw64/lib/qtmain.prl:
+.qmake.stash:
 C:/msys64/mingw64/share/qt5/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile cpu_sceduler.pro

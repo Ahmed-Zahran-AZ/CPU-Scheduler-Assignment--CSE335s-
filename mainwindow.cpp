@@ -12,7 +12,7 @@
 #include <QFileDialog>
 #include <QPainter>
 #include <QMessageBox>
-
+#include <QPrinter>
 ProcessQueue Queue;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -865,7 +865,7 @@ void MainWindow::on_pushButton_5_clicked()
 {
     abortExecution();
 }
-
+/*
 void MainWindow::exportGanttChart() {
     if (ganttChartData.isEmpty()) {
         QMessageBox::warning(this, "Export Error", "No Gantt chart data to export!");
@@ -899,5 +899,132 @@ void MainWindow::exportGanttChart() {
         QMessageBox::critical(this, "Error", 
             "Failed to export Gantt chart!");
     }
-}
+}*/
 
+// PDF Vector Graphics
+/*
+void MainWindow::exportGanttChart() {
+    if (ganttChartData.isEmpty()) {
+        QMessageBox::warning(this, "Export Error", "No Gantt chart data to export!");
+        return;
+    }
+
+    QString fileName = QFileDialog::getSaveFileName(
+        this,
+        "Export Gantt Chart as PDF",
+        "",
+        "PDF Files (*.pdf);;All Files (*)"
+    );
+
+    if (fileName.isEmpty()) {
+        return;
+    }
+
+    if (!fileName.endsWith(".pdf", Qt::CaseInsensitive)) {
+        fileName += ".pdf";
+    }
+
+    // Configure PDF printer for vector output
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(fileName);
+
+    // Set page size to match the scene (in points for PDF)
+    QRectF sceneRect = ganttScene->sceneRect();
+    printer.setPageSize(QPageSize(sceneRect.size(), QPageSize::Point));
+    printer.setPageMargins(QMarginsF(0, 0, 0, 0), QPageLayout::Millimeter);
+
+    // Render the scene directly to PDF (vector mode)
+    QPainter painter(&printer);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::TextAntialiasing, true);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform, false); // Avoid rasterizing
+
+    ganttScene->render(&painter); // This will draw vectors if scene uses vector elements
+
+    painter.end(); // Finalize PDF
+
+    // Check if file was created
+    if (QFile::exists(fileName)) {
+        QMessageBox::information(
+            this,
+            "Success",
+            "Gantt chart exported as vector PDF:\n" + fileName
+        );
+    } else {
+        QMessageBox::critical(
+            this,
+            "Error",
+            "Failed to export PDF!"
+        );
+    }
+}
+*/
+// PDF + JPEG/PNG
+void MainWindow::exportGanttChart() {
+    if (ganttChartData.isEmpty()) {
+        QMessageBox::warning(this, "Export Error", "No Gantt chart data to export!");
+        return;
+    }
+
+    // File dialog with multiple format options
+    QString fileName = QFileDialog::getSaveFileName(
+        this,
+        "Export Gantt Chart",
+        "",
+        "PDF Files (*.pdf);;PNG Image (*.png);;JPEG Image (*.jpg);;All Files (*)"
+    );
+
+    if (fileName.isEmpty()) {
+        return;  // User canceled
+    }
+
+    // Determine the selected format
+    bool isPdf = fileName.endsWith(".pdf", Qt::CaseInsensitive);
+    bool isPng = fileName.endsWith(".png", Qt::CaseInsensitive);
+    bool isJpg = fileName.endsWith(".jpg", Qt::CaseInsensitive) || fileName.endsWith(".jpeg", Qt::CaseInsensitive);
+
+    // Default to PNG if no extension provided
+    if (!isPdf && !isPng && !isJpg) {
+        fileName += ".png";  // Default to PNG
+        isPng = true;
+    }
+
+    // --- PDF Export (Vector) ---
+    if (isPdf) {
+        QPrinter printer(QPrinter::HighResolution);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(fileName);
+        printer.setPageSize(QPageSize(ganttScene->sceneRect().size(), QPageSize::Point));
+        printer.setPageMargins(QMarginsF(0, 0, 0, 0), QPageLayout::Millimeter);
+
+        QPainter painter(&printer);
+        painter.setRenderHint(QPainter::Antialiasing);
+        ganttScene->render(&painter);
+        painter.end();
+
+        if (QFile::exists(fileName)) {
+            QMessageBox::information(this, "Success", "Gantt chart exported as PDF:\n" + fileName);
+        } else {
+            QMessageBox::critical(this, "Error", "Failed to export PDF!");
+        }
+    }
+    // --- PNG/JPEG Export (Raster) ---
+    else {
+        QPixmap pixmap(ganttScene->sceneRect().size().toSize());
+        pixmap.fill(Qt::white);
+
+        QPainter painter(&pixmap);
+        painter.setRenderHint(QPainter::Antialiasing);
+        ganttScene->render(&painter);
+        painter.end();
+
+        QString format = isPng ? "PNG" : "JPEG";
+        if (pixmap.save(fileName, format.toStdString().c_str())) {
+            QMessageBox::information(this, "Success", "Gantt chart exported as " + format + ":\n" + fileName);
+        } else {
+            QMessageBox::critical(this, "Error", "Failed to export image!");
+        }
+    }
+}
+//PDF + JPEG/PNG + AverageTimes

@@ -41,7 +41,6 @@ How to Use the Application
    - For Round Robin, enter the time quantum value
    - Click "Run Scheduler" button  	
    - The simulation will start automatically
-      - Run Scheduler (No Live Scheduling) will finsih all the processes immediately
    - note: Run Scheduler will automatically load the processes in the text "processes.txt"
 
 3. During Execution:
